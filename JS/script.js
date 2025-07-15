@@ -99,7 +99,7 @@ let filmeFavorito = "Emanuelle"
 
 let gameFavorito = "Dominó com os parças"
 
-console.log("O Sr.: " + nomezito + " com a idade de: " + idadecita + " , gosta de programação? " + gostaDeProgramacao + " , diz que seu filmne favorito é: " + filmeFavorito + " e seu jogo favorito é: " + gameFavorito + ".");
+console.log("O Sr.: " + nomezito + " com a idade de: " + idadecita + " , gosta de programação? " + gostaDeProgramacao + " , diz que seu filme favorito é: " + filmeFavorito + " e seu jogo favorito é: " + gameFavorito + ".");
 
 
 // 2 - OPERAÇÕES ARITMÉTICAS COM AS VARIÁVEIS
@@ -219,3 +219,196 @@ let numeroConvertido2 = +stringNumero2
 console.log(numeroConvertido1, numeroConvertido2);
 
 
+// CONVERTENDO DE NÚMEROS PARA STRING
+
+// USANDO o toString()
+
+let numero666 = 666
+let stringNumero666 = numero666.toString()
+console.log(stringNumero666);
+
+
+// USANDO String()
+
+let numero33 = 33
+let stringnumero33 = String(numero33)
+console.log(stringnumero33);
+
+/* CONHECENDO ESTRUTURAS CONDICIONAIS
+
+- Os programas são executados de cima para baixo;
+- Com estas estruturas podemos alterar o fluxo de execução;
+- O caminho dependerá das condições e comparações.*/
+
+// USANDO O IF
+
+// if: Executar um bloco de código, se uma condição for verdadeira.
+
+// SITAXE: if (condição) {}
+
+// Exemplo 01 
+
+let idadeMaria = 71
+
+let idadeJoao = 63
+
+if (idadeMaria > idadeJoao){
+  console.log("Exemplo 01 de if: Ih rapaz, a Maria é mais velha que o João.");
+}
+
+//  EXEMPLO 02
+
+let usuario = "Gustavo"
+
+if (usuario === "Gustavo"){
+ console.log(`Fala meu camarada ${usuario}, seu casca de bala!`);
+  
+}
+
+// USANDO O else if
+
+// else if: Adiciona uma nova condição, se a condição anterior for falsa.
+
+/* SINTAXE:
+
+if (condicao){
+}
+else if (outraCondicao){
+}
+
+*/
+
+// EXEMPLO 01 
+
+let logadoTikTok = false
+
+if (logadoTikTok === true){
+  console.log("Bem-vindo meu caro desocupado!");
+}
+
+else if (logadoTikTok === false){
+  console.log("Até que enfim, foi lavar a louça!");
+}
+
+// EXEMPLO 02
+
+let nomeUsuaria = "Vanessa"
+
+if (nomeUsuaria === "Rebecca"){
+  console.log("Seja bem-vinda Rebecca. Vamos estudar?"); 
+}
+
+else if (nomeUsuaria === "Letícia"){
+  console.log("Seja bem-vinda Letícia. Vamos estudar?")
+}
+
+else if (nomeUsuaria === "Vanessa"){
+  console.log("Seja bem-vinda Vanessa. Vamos estudar?");
+}
+
+// USANDO O else
+
+  /* else: Executa um bloco de código se todas as condições anteriores forem falsas.
+  
+  SINTAXE:
+
+  if (condição){
+  }
+  
+  else if (outra condição){
+  }
+
+  else {}  */
+
+  // if e else, só temos 1, no início e outro no final.
+  // else if, eu posso ter vários ao longo da comparação;
+
+  // EXEMPLO 01
+
+  let corEscolhida = "Preta"
+
+  if (corEscolhida === "Branca"){
+    console.log("Ótima escolha! Seu possante será branco!");
+  }
+  else if (corEscolhida === "Vermelha"){
+    console.log("Caraca feio, teu carro vai ser vermelho.");
+  }
+  else {
+    console.log("Poxa, só temos duas cores disponíveis no momento. Escolha Branco ou Vermelho.");
+  }
+
+  // EXEMPLO 2
+
+  let idadeusuario = 37
+
+  if (idadeusuario <= 17){
+    console.log("Este site não é permitido o acesso por menores de idade.");
+  }
+  else if (idadeusuario === 18){
+    console.log("Juízo aí, meu nobre!");
+  }
+  else if (idadeusuario >= 90){
+    console.log("Eita nois, então tá... Olha o coração!");
+  }
+  else{
+    console.log("Boa diversão!!!");
+    
+  }
+
+  // OPERADORES LÓGICOS
+/* ● Os operadores lógicos servem para unir duas ou  mais comparações;
+   ● O resultado final também é um boolean;
+   ● && - AND - true apenas se os dois lados forem verdadeiros;
+   ● || - OR - para ser true, um lado como true é  suficiente;
+   ● !  - NOT - este operador inverte a comparação; */
+
+   // EXEMPLO 01 - && "AND"
+
+    let nomeUsuario1 = "Marcos"
+    let senhaUsuario1 = 1234
+
+    if (nomeUsuario1 === "Marcos" && senhaUsuario1 === 1234){
+      console.log("Login realizado com sucesso.");
+    }
+    else{
+      console.log("Insira os dados corretamente."); 
+    }
+
+  //  EXEMPLO 02 - || "OR"
+
+  let temDinheiro = true
+  let temCartao = false
+
+  if (temDinheiro === true || temCartao === true){
+    console.log("Pode efetuar a compra.");
+  }
+  else {
+    console.log("Tá liso feio");
+  }
+
+  // EXEMPLO 3 ! "NOT"
+
+  let estaChovendo = true
+
+  if (!estaChovendo){
+    console.log("Parece que não está chovendo, que tal uma voltinha de bike?");
+  }
+  else {
+    console.log("Ih, tá chovendo! Melhor deixar para depois...");
+  }
+
+  // EXEMPLO PRÁTICO DE COM && E OR
+
+  let idadeParticipante = 20
+  let temDocumento = true
+
+  if (idadeParticipante <=17 && temDocumento){
+    console.log("Menor, mas pode participar do evento.");
+  }
+  else if (idadeParticipante <= 17 || !temDocumento){
+    console.log("Não pode participar");
+  }
+  else {
+    console.log("Pode partipar.");
+    
+  }
