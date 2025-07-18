@@ -529,3 +529,200 @@ let resultadoMenos2 = contagemMenos2-- * 2
 console.log(`O resultadoMenos2 foi: ${resultadoMenos2}`);
 console.log(`O contagemMenos2 foi: ${contagemMenos2}`);
 
+
+//ESTRUTURAS DE REPETIÇÃO
+/* O que são estruturas de repetição?
+● Um bloco de código que se repete até uma 
+condição ser satisfeita;
+● Isso evita a repetição desnecessária do nosso 
+código;
+● A suas sintaxes são diferentes, mas as duas chegam 
+no mesmo resultado;
+● Temos que nos atentar ao loop infinito */
+
+// WHILE: é usada para repetir um bloco de código enquanto uma condição especificada for verdadeira.
+
+// SINTAXE: while (condição) {}
+
+// Exemplo 01
+
+let contagemRegressiva = 10
+
+while (contagemRegressiva > 0) {
+  console.log(contagemRegressiva)
+  contagemRegressiva--
+}
+
+console.log("Feliz ano novo!");
+
+// EXEMPLO 02 
+
+let estoque = 5
+
+while (estoque > 0) {
+  console.log("Produto em estoque. Quantidade restante: " + estoque)
+  estoque--
+}
+
+console.log("Produto esgotado!");
+
+// FOR: é usada quando você sabe exatamente quantas vezes, deseja repetir uma ação. Ele consiste em 3 partes: inicialização, condição e expressão final.
+
+// SINTAXE: for (incialização; condição; expressão final) {}
+
+// EXEMPLO 01
+
+for (let i = 1; i < 10; i++) {
+  console.log("Repetindo algo...");
+}
+
+// EXEMPLO 02
+
+let estoque1 = 10
+
+for (estoque1; estoque1 > 0; estoque1 = estoque1 - 1) {
+  console.log(`O estoque está diminuindo: ${estoque1}`);
+}
+console.log(`O estoque é igual a: ${estoque1}`);
+
+
+// Forçando a saída de um loop
+// Com a instrução do break podemos parar um loop, fazendo com que as repetições cessem.
+// Isso pode poupar memória, pois o código será executado menos vezes.
+// Observação: seu uso não é muito comum, mas é um recurso válido.
+
+// EXEMPLO
+
+let estoque2 = 20
+for (estoque2; estoque2 > 10; estoque2--) {
+  console.log(`O estoque é: ${estoque2}`);
+
+  if (estoque2 === 15) {
+    console.log("Atenção! O estoque cegou em 15 unidades.");
+
+  }
+}
+
+// Pulando uma execução de loop
+// A palavra reservada continue, pode pular uma ou mais execuções do loop.
+// É um recurso utilizado de forma semelhante ao break.
+
+// Exemplo
+
+for (let f = 1; f <= 5; f++) {
+  if (f === 3) {
+    continue
+  }
+  console.log("Contagem: " + f);
+
+}
+
+/* O que são funções?
+ ● Estruturas de código menores, podemos dividir 
+nosso código em várias funções;
+ ● O ideal é que cada uma tenha apenas um único 
+objetivo;
+ ● Isso nos faz poupar código, pois podemos 
+reaproveitá-las;
+ ● A linguagem tem várias funções já criadas, e nós 
+podemos criar as nossas;
+
+    Definindo uma função
+  ● A estrutura da função é um pouco mais complexa;
+  ● Primeiramente utilizamos a palavra function, isso 
+  inicia uma função;
+  ● Precisamos depois nomeá-la;
+  ● Os parâmetros, que são uma espécie de 
+  configuração, ficam entre ( ) depois do nome;
+  ● O corpo da função fica entre  { };
+  ● Geralmente uma função retorna um valor; */
+
+// SINTAXE: function nomeDaFuncao (){}
+
+// EXEMPLO 1 - USO BÁSICO
+
+function minhaFuncao() {
+  console.log("Testando, 1, 2, 3...");
+}
+
+minhaFuncao()
+
+// EXEMPLO 2 - USANDO UMA FUNÇÃO EM UMA VARIÁVEL
+
+const minhaFuncaoEmVariavel = function () {
+  console.log("Usando uma função em variável");
+}
+
+minhaFuncaoEmVariavel()
+
+// EXEMPLO 3 - USANDO UMA FUNÇÃO COM PARÂMETRO
+
+function funcaoComParametro(txt) {
+  console.log(`${txt}`);
+}
+
+funcaoComParametro("Hoje é quinta-feira negada!!!")
+
+// A palavra reservado return, é fundamental em funções, porque permite que elas produzam algum resultado, que pode ser usado em outras partes do código. Sem o mesmo, não consiguimos usar o resultado dela em outra parte do código.
+
+// EXEMPLO COM RETURN
+
+const a = 10
+const b = 20
+const c = 30
+const d = 40
+
+function somandoNumeros(n1, n2) {
+  return n1 + n2
+}
+
+const resultado = somandoNumeros(a, b)
+
+console.log(resultado);
+
+console.log(somandoNumeros(c, d));
+
+/* Escopo das funções
+● As funções tem um escopo separado do escopo do 
+programa, que é o global;
+● Este escopo faz com que variáveis de fora não 
+funcionem dentro;
+● Podemos então declarar novas variáveis, sem 
+interferir nas já declaradas;*/
+
+let varTeste = 10
+
+function testandoEscopo() {
+  let varTeste = 20
+  console.log(`Exemplo de Escopo: Variável dentro da função: ${varTeste}`);
+}
+
+console.log(`Exemplo de Escopo: Variável fora da função: ${varTeste}`);
+
+testandoEscopo()
+
+
+/* Escopo aninhado
+As formas de criar variáveis, let e const, nos dão a 
+possibilidade do escopo aninhado;
+ ● Que consiste em ter em qualquer bloco a 
+declaração de variáveis separadas dos outros 
+escopos;
+ ● Um bloco é caracterizado por um código entre { }; */
+
+ let varTeste2 = 10
+
+ function escopoAninhado(){
+  let varTeste2 = 20;
+
+  if (varTeste2 === 20){
+    let varTeste2 = 30;
+    console.log(`Escopo Aninhado: Valor da variável dentro do IF: ${varTeste2}`);
+  }
+  console.log(`Escopo Aninhado: Valor da variável dentro da Função: ${varTeste2}`);
+ }
+
+ escopoAninhado()
+
+ console.log(`Escopo Aninhado: Valor da variável fora da Função: ${varTeste2}`);
+ 
